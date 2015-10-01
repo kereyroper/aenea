@@ -128,14 +128,18 @@ _QUOTED_KEY_TRANSLATION = {
 
 _MODIFIER_KEY_DIRECT = {
     # modifiers
+    'alt': 'option',
     'command': 'command',
+    'cmd': 'command',
     'control': 'control',
+    'ctrl': 'control',
     'function': 'function',
     'option': 'option',
     'rightcontrol': 'rightcontrol',
     'rightoption': 'rightoption',
     'rightshift': 'rightshift',
     'shift': 'shift',
+    'win': 'command',
     }
 
 # from /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ \
