@@ -425,7 +425,10 @@ def key_press(
         key_command = "%s using {%s} " % (command, ', '.join(elems))
     else:
         key_command = command
+    execute_key_command(key_command, count=count, delay=delay)
 
+
+def execute_key_command(key_command, count=1, delay=''):
     script = applescript.AppleScript('''
     tell application "System Events"
         try
@@ -447,11 +450,18 @@ def write_text(text, paste=False):
        pbpaste clipboard to paste the text instead of typing it.'''
 
     logging.debug("text = %s paste = %s" % (text, paste))
-    if text:
+    if not text:
+        return
+
+    if paste:
         # copy the pasted text to the clipboard
         write_command(text, arguments='', executable='pbcopy')
         # paste
         key_press('v', 'super')
+    else:
+        for c in text:
+            key_command = 'keystroke "{0}"'.format(c)
+            execute_key_command(key_command)
 
 
 def mouseEvent(type, posx, posy, clickCount=1):
