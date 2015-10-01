@@ -75,10 +75,10 @@ _SERVER_INFO = {
 
 _MOD_TRANSLATION = {
     'alt': 'alt',
-    'shift': 'shift',
+    'command': 'command',
     'control': 'control',
+    'shift': 'shift',
     'super': 'command',
-    'command': 'command'
     }
 
 # The key maps are broken up into different sections because AppleScript has
