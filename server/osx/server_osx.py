@@ -28,7 +28,7 @@ import jsonrpclib.SimpleJSONRPCServer
 import config
 import logging
 
-# logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.DEBUG)
 
 import applescript
 from Quartz.CoreGraphics import *
