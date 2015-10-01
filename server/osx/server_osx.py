@@ -383,9 +383,9 @@ def key_press(
        'meta', and 'flag' (same as super). count is number of times to
        press it. count_delay delay in ms between presses.'''
 
-    logging.debug("\nkey = {key} modifiers = {modifiers} " +
-                  "direction = {direction} " +
-                  "count = {count} count_delay = {count_delay} ".
+    logging.debug(("key = {key} modifiers = {modifiers} "
+                  "direction = {direction} "
+                  "count = {count} count_delay = {count_delay}").
                   format(modifiers=modifiers,
                          direction=direction,
                          count=count,
