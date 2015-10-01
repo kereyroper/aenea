@@ -261,7 +261,7 @@ _KEYCODE_TRANSLATION = {
 
 
 def write_command(message, arguments=' -f -', executable='???'):
-    print 'echo \'%s\' | %s %s' % (message, executable, arguments)
+    logging.debug('echo \'%s\' | %s %s' % (message, executable, arguments))
     with os.popen('%s %s' % (executable, arguments), 'w') as fd:
         fd.write(message)
 
