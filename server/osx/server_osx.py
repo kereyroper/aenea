@@ -272,14 +272,18 @@ def get_active_window():
     script = applescript.AppleScript('''
         global frontApp, frontAppName, windowTitle
 
-        set windowTitle to ""
+        set windowTitle to "fakeTitle"
         tell application "System Events"
             set frontApp to first application process whose frontmost is true
             set frontAppName to name of frontApp
             tell process frontAppName
-                tell (1st window whose value of attribute "AXMain" is true)
-                    set windowTitle to value of attribute "AXTitle"
-                end tell
+                try
+                    tell (1st window whose value of attribute "AXMain" is true)
+                        set windowTitle to value of attribute "AXTitle"
+                    end tell
+                on error errmess
+                    log errmess
+                end try
             end tell
         end tell
 
@@ -288,7 +292,7 @@ def get_active_window():
     # window_id isn't really a unique id, instead it's just the app name -- but
     # still useful for automating through applescript
     window_id, window_title = script.run()
-    if window_id:
+    if window_id and window_title:
         return window_id.encode('utf-8'), window_title.encode('utf-8')
     else:
         return None, None
