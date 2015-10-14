@@ -427,6 +427,9 @@ def key_press(
         key_command = command
 
     script = applescript.AppleScript('''
+    use framework "Foundation"
+    use scripting additions
+    current application's NSThread's sleepForTimeInterval:1
     tell application "System Events"
         try
             repeat {count} times
