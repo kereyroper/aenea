@@ -101,7 +101,7 @@ _QUOTED_KEY_TRANSLATION = {
     'comma': ',',
     'dollar': '$',
     'dot': '.',
-    'dquote': '"',
+    'dquote': '\\"',
     'equal': '=',
     'exclamation': '!',
     'hash': '#',
