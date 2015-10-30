@@ -419,6 +419,8 @@ def key_press(
             command = 'keystroke "{0}"'.format(key_to_press)
         elif not key_to_press:
             key_to_press = _KEYCODE_TRANSLATION.get(key.lower(), None)
+            if len(key) == 1 and key.lower() != key:
+                modifiers.append('shift')
             command = 'key code "{0}"'.format(key_to_press)
 
     if key_to_press is None:
