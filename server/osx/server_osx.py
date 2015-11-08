@@ -292,6 +292,7 @@ def get_active_window():
     # window_id isn't really a unique id, instead it's just the app name -- but
     # still useful for automating through applescript
     window_id, window_title = script.run()
+    logging.debug("window_id=%s window_title=%s" % (window_id, window_title))
     if window_id and window_title:
         return window_id.encode('utf-8'), window_title.encode('utf-8')
     else:
@@ -331,6 +332,9 @@ def get_window_properties(window_id=None):
     ''' % window_id
     script = applescript.AppleScript(cmd)
     properties = script.run()
+
+    logging.debug("window_id: %s" % window_id)
+    logging.debug("properties: %s" % properties)
 
     p = map_window_properties(properties)
     return p
