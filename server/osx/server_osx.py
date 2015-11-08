@@ -295,6 +295,8 @@ def get_active_window():
     logging.debug("window_id=%s window_title=%s" % (window_id, window_title))
     if window_id and window_title:
         return window_id.encode('utf-8'), window_title.encode('utf-8')
+    elif window_id:
+        return window_id.encode('utf-8'), None
     else:
         return None, None
 
