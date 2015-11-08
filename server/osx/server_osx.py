@@ -93,7 +93,7 @@ _QUOTED_KEY_TRANSLATION = {
     'apostrophe': "'",
     'asterisk': '*',
     'at': '@',
-    'backslash': '\\',
+    'backslash': '\\\\',
     'backtick': '`',
     'bar': '-',
     'caret': '^',
