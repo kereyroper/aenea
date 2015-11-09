@@ -303,6 +303,8 @@ def get_active_window():
 
 def map_window_properties(properties):
     p = {}
+    if not properties:
+        return p
     for key in properties:
         short_key = re.match(r".*\('(.*)'\).*", str(key))  # is there a better
         # way to access keys that are instances?
