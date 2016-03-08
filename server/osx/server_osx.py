@@ -357,7 +357,7 @@ def get_context():
     window_id, window_title = get_active_window()
     properties = get_window_properties(window_id)
     properties['id'] = window_id
-    properties['title'] = window_title
+    properties['title'] = window_title or ''
 
     # Types in 'breaking' throw an exception in jsonrpclib, so
     # they need to be converted to strings.
