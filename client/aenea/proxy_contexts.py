@@ -122,7 +122,7 @@ class ProxyCustomAppContext(dragonfly.Context):
     def _property_match(self, key, actual, desired):
         '''Overload to change how we should compare actual and
            desired properties.'''
-        if not (actual and desired):
+        if actual is None or desired is None:
             raise Exception("key=%s actual=%s desired=%s" % (key, actual, desired))
         if not self.case_sensitive:
             actual = actual.lower()
