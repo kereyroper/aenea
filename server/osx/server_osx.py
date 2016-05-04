@@ -443,7 +443,7 @@ def key_press(
 
 
 def execute_key_command(key_command, count=1, delay=''):
-    logging.debug("key_command = %s" % key_command)
+    logging.debug("key_command = %s delay = %s" % (key_command, delay))
     script = applescript.AppleScript('''
     tell application "System Events"
         try
